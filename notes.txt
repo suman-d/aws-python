@@ -1,0 +1,28 @@
+# aws iam create-role \
+    --role-name MyApp \
+    --assume-role-policy-document '{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "lambda.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+        }
+    ]
+}'
+
+
+# aws lambda create-function 
+    --function-name hello-world 
+    --handler app.handler 
+    --runtime python3.6 
+    --role arn:aws:iam::635100884080:role/MyApp 
+    --zip "fileb://./app.zip"
+
+# aws lambda invoke --function-name hello-world2 --payload '{"name": "Suman"}' output
+# cat output
+
+
+
