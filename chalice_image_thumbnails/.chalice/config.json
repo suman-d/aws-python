@@ -1,0 +1,9 @@
+{
+  "version": "2.0",
+  "app_name": "chalice_image_thumbnails",
+  "stages": {
+    "dev": {
+      "api_gateway_stage": "api"
+    }
+  }
+}

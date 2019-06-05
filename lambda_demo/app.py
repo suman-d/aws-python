@@ -1,4 +1,4 @@
 def handler(event, context):
-    name = event["name"]
+    name = event["foo"]
 
     return "Hello {} !!".format(name)
