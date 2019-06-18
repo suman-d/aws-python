@@ -14,13 +14,21 @@
 }'
 
 
-# aws lambda create-function 
-    --function-name hello-world 
-    --handler app.handler 
-    --runtime python3.6 
-    --role arn:aws:iam::635100884080:role/MyApp 
+# aws lambda create-function \
+    --function-name Hello \ 
+    --handler app.handler \
+    --runtime python3.6 \
+    --role arn:aws:iam::635100884080:role/MyApp \ 
     --zip "fileb://./app.zip"
 
+
+aws lambda create-function \
+    --function-name hello \
+    --handler app.handler \
+    --runtime python3.6 \
+    --role arn:aws:iam::635100884080:role/MyApp \
+    --zip "fileb://./app2.zip"
+    
 # aws lambda invoke --function-name hello-world2 --payload '{"name": "Suman"}' output
 # cat output
 
